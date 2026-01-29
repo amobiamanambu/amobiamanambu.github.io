@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Amobichukwu C. Amanambu | Hydrology & Water Resources</title>
+    <meta name="description" content="Dr. Amobichukwu C. Amanambu - Assistant Professor at University of Alabama specializing in Hydrology, Water Resources, and Remote Sensing">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d3748;
+            --primary-light: #4a5568;
+            --accent: #4299e1;
+            --accent-dark: #2b6cb0;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--white);
+            font-size: 15px;
+        }
+
+        /* Navigation - Compact */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.6rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: var(--gray-700);
+        }
+
+        /* Hero Section - Compact Gray */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 50%, var(--primary-light) 100%);
+            padding-top: 60px;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-frame {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--gray-600));
+            padding: 4px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .profile-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: url('Amobichukwu_.jpg') center/cover;
+            border: 3px solid var(--white);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+
+        .hero-content .affiliation {
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .hero-content p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Bar - Compact */
+        .stats-bar {
+            background: var(--white);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .stats-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.75rem;
+        }
+
+        .stat-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .stat-item a:hover .stat-number {
+            color: var(--accent);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            transition: color 0.2s;
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+        }
+
+        .stat-note {
+            font-size: 0.7rem;
+            color: var(--accent);
+        }
+
+        /* Section Styles - Compact */
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--gray-800);
+            margin-bottom: 0.3rem;
+        }
+
+        .section-header p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .section-divider {
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* About Section - Compact */
+        #about {
+            background: var(--gray-50);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .about-content p {
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .interest-tag {
+            background: white;
+            color: var(--gray-700);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--gray-200);
+        }
+
+        .education-list {
+            background: white;
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .education-list h3 {
+            font-size: 1rem;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .edu-year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.85rem;
+            margin: 0.15rem 0;
+        }
+
+        .edu-school {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+        }
+
+        /* Research Section with Images */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .research-image {
+            height: 160px;
+            background: linear-gradient(135deg, var(--gray-200), var(--gray-300));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: 0.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .research-image-placeholder {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .research-image-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: var(--gray-400);
+        }
+
+        .research-content {
+            padding: 1rem;
+        }
+
+        .research-year {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .research-title {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+            line-height: 1.4;
+        }
+
+        .research-journal {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-desc {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .research-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--accent);
+            font-size: 0.8rem;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .research-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Conferences Section */
+        #conferences {
+            background: var(--gray-50);
+        }
+
+        .conferences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .conference-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 3px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .conference-year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .conference-name {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.85rem;
+            margin: 0.2rem 0;
+        }
+
+        .conference-location {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .conference-title {
+            color: var(--gray-700);
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .conference-image {
+            width: 100%;
+            height: 120px;
+            background: var(--gray-100);
+            border-radius: 6px;
+            margin-top: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 0.75rem;
+        }
+
+        .conference-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        /* Publications Section - Compact */
+        .publications-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .pub-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 3px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .pub-card:hover {
+            transform: translateX(3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .pub-year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.85rem;
+            margin: 0.2rem 0;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+        }
+
+        .pub-journal {
+            color: var(--gray-700);
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+
+        .pub-link {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .pub-card:hover {
+            border-left-color: var(--accent-dark);
+        }
+
+        .pub-link:hover .pub-title {
+            color: var(--accent);
+        }
+
+        .view-more {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        /* Teaching Section - Compact */
+        #teaching {
+            background: var(--gray-50);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.2s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .course-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent), var(--gray-600));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .course-title {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.85rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .course-code {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section - Compact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.1rem;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-text h4 {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.85rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .social-link-footer {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-800);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .social-link-footer:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .address-card {
+            background: var(--gray-50);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .address-card h4 {
+            color: var(--gray-800);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .address-card iframe {
+            border-radius: 8px;
+        }
+
+        /* Footer - Compact */
+        footer {
+            background: var(--gray-800);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .profile-frame {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 1rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                gap: 0.75rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                min-height: 60vh;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Dr. Amanambu</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#conferences">Conferences</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" onclick="toggleNav()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Compact Gray -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-image">
+                <div class="profile-frame">
+                    <div class="profile-inner"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1>Dr. Amobichukwu C. Amanambu</h1>
+                <p class="subtitle">Assistant Professor</p>
+                <p class="affiliation">Department of Geography & the Environment, University of Alabama</p>
+                <p>Advancing hydrology and water resources research through field observations, remote sensing, machine learning, and drone technology.</p>
+                <div class="hero-buttons">
+                    <a href="#research" class="btn btn-primary">
+                        <i class="fas fa-microscope"></i> Research
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=XWcrOgkAAAAJ&hl=en" target="_blank" class="btn btn-outline">
+                        <i class="fas fa-graduation-cap"></i> Scholar
+                    </a>
+                    <div class="social-icons">
+                        <a href="https://x.com/amobiamanambu" target="_blank" class="social-icon" title="Twitter/X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/amobiamanambu/" target="_blank" class="social-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/amobiamanambu" target="_blank" class="social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar - Compact -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <a href="https://scholar.google.com/citations?user=XWcrOgkAAAAJ&hl=en" target="_blank" title="View on Google Scholar">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Publications</div>
+                </a>
+            </div>
+            <div class="stat-item">
+                <a href="https://scholar.google.com/citations?user=XWcrOgkAAAAJ&hl=en" target="_blank" title="View on Google Scholar - Live Count">
+                    <div class="stat-number" id="citationCount">1400+</div>
+                    <div class="stat-label">Citations</div>
+                    <div class="stat-note"><i class="fas fa-external-link-alt"></i> Google Scholar</div>
+                </a>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Awards</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Courses</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>About</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p>I am an Assistant Professor in the Department of Geography and the Environment at the University of Alabama. My research focuses on understanding the complex interactions between water systems, climate change, and human activities.</p>
+                    <p>My work combines traditional hydrological methods with cutting-edge technologies including machine learning (LSTM, Transformers), remote sensing, and UAS (drone) applications to address critical water resource challenges.</p>
+                    <p>I study how dams, droughts, and dredging impact river systems, floodplain dynamics, and groundwater resources across the Southeastern US, West Africa, and Central Asia.</p>
+                    <div class="research-interests">
+                        <span class="interest-tag">Hydrology</span>
+                        <span class="interest-tag">Water Resources</span>
+                        <span class="interest-tag">Climate Change</span>
+                        <span class="interest-tag">Floods & Droughts</span>
+                        <span class="interest-tag">Groundwater</span>
+                        <span class="interest-tag">Remote Sensing</span>
+                        <span class="interest-tag">Machine Learning</span>
+                        <span class="interest-tag">UAS/Drones</span>
+                    </div>
+                </div>
+                <div class="education-list">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="education-item">
+                        <div class="edu-year">2023</div>
+                        <div class="edu-degree">Ph.D. Geography</div>
+                        <div class="edu-school">University of Florida, USA</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-year">2023</div>
+                        <div class="edu-degree">M.Sc. Water & Environmental Management</div>
+                        <div class="edu-school">Loughborough University, UK</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-year">2014</div>
+                        <div class="edu-degree">M.Sc. Geography</div>
+                        <div class="edu-school">University of Ibadan, Nigeria</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-year">2009</div>
+                        <div class="edu-degree">B.Sc. Geography</div>
+                        <div class="edu-school">University of Ibadan, Nigeria</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Research Section -->
+    <section id="research">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Featured Research</h2>
+                <p>Key publications with visual highlights</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="research-grid">
+                <!-- Research Card 1 -->
+                <div class="research-card">
+                    <div class="research-image">
+                        <div class="research-image-placeholder">
+                            <i class="fas fa-water"></i>
+                            <span>Add figure: groundwater_climate.jpg</span>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <div class="research-year">2020 • Journal of Hydrology</div>
+                        <div class="research-title">Groundwater System and Climate Change: Present Status and Future Considerations</div>
+                        <div class="research-journal">Journal of Hydrology, 589, 125163</div>
+                        <div class="research-desc">A comprehensive review examining how climate change affects groundwater recharge, storage, and quality globally. This paper synthesizes current understanding and identifies critical research gaps for sustainable groundwater management.</div>
+                        <a href="https://doi.org/10.1016/j.jhydrol.2020.125163" target="_blank" class="research-link">
+                            <i class="fas fa-external-link-alt"></i> View Paper
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="research-card">
+                    <div class="research-image">
+                        <div class="research-image-placeholder">
+                            <i class="fas fa-brain"></i>
+                            <span>Add figure: machine_learning.jpg</span>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <div class="research-year">2023 • Geomorphology</div>
+                        <div class="research-title">Machine Learning Insights of Anthropogenic and Natural Influences on Riverbed Deformation</div>
+                        <div class="research-journal">Geomorphology, 446, 108986</div>
+                        <div class="research-desc">Using machine learning to understand how human activities (dams, dredging) and natural processes shape riverbed changes in the Apalachicola River, providing insights for river management.</div>
+                        <a href="https://doi.org/10.1016/j.geomorph.2023.108986" target="_blank" class="research-link">
+                            <i class="fas fa-external-link-alt"></i> View Paper
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="research-card">
+                    <div class="research-image">
+                        <div class="research-image-placeholder">
+                            <i class="fas fa-sun"></i>
+                            <span>Add figure: drought_forecast.jpg</span>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <div class="research-year">2022 • Water</div>
+                        <div class="research-title">Hydrological Drought Forecasting using Deep Transformer Model</div>
+                        <div class="research-journal">Water, 14(22)</div>
+                        <div class="research-desc">Pioneering application of deep learning Transformer architecture to forecast hydrological droughts, improving prediction accuracy for water resource management and early warning systems.</div>
+                        <a href="https://doi.org/10.3390/w14223611" target="_blank" class="research-link">
+                            <i class="fas fa-external-link-alt"></i> View Paper
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Card 4 -->
+                <div class="research-card">
+                    <div class="research-image">
+                        <div class="research-image-placeholder">
+                            <i class="fas fa-house-flood-water"></i>
+                            <span>Add figure: dam_floodplain.jpg</span>
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <div class="research-year">2023 • Catena</div>
+                        <div class="research-title">Damming Consequences: Quantifying Effects on Channel Geometry and Floodplain Inundation</div>
+                        <div class="research-journal">Catena, 235, 107634</div>
+                        <div class="research-desc">Comprehensive analysis of how dam operations alter river channel shape and reduce floodplain connectivity, with implications for ecosystem health and flood management in the Apalachicola River.</div>
+                        <a href="https://doi.org/10.1016/j.catena.2023.107634" target="_blank" class="research-link">
+                            <i class="fas fa-external-link-alt"></i> View Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conferences Section -->
+    <section id="conferences">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Conferences & Presentations</h2>
+                <p>Recent presentations at major conferences</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="conferences-grid">
+                <!-- Conference 1 -->
+                <div class="conference-card">
+                    <div class="conference-year">December 2025</div>
+                    <div class="conference-name">American Geophysical Union (AGU)</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> New Orleans, LA</div>
+                    <div class="conference-title">"Learning the Bank: ML-Powered Redefinition of Bankfull Stage in Lowland River Systems"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 2 -->
+                <div class="conference-card">
+                    <div class="conference-year">November 2025</div>
+                    <div class="conference-name">SEDAAG 80th Annual Meeting</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Greenville, SC</div>
+                    <div class="conference-title">"Linking Flood Dynamics and Landslide Susceptibility during Hurricane Helene"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 3 -->
+                <div class="conference-card">
+                    <div class="conference-year">March 2025</div>
+                    <div class="conference-name">AAG Annual Meeting</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Detroit, MI</div>
+                    <div class="conference-title">"Assessing the Impact of Hurricane Helene on River Dynamics in East Tennessee"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 4 -->
+                <div class="conference-card">
+                    <div class="conference-year">December 2024</div>
+                    <div class="conference-name">AGU - Keynote Speaker</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Washington, DC</div>
+                    <div class="conference-title">"Compound Extreme Events in Hydrology: The African Perspective" (African Hydrology Session)</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 5 -->
+                <div class="conference-card">
+                    <div class="conference-year">June 2025</div>
+                    <div class="conference-name">USGS-FLOW Academy Workshop</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Virtual</div>
+                    <div class="conference-title">"Python-Powered Hydro Dashboards: From Notebook to IoT Display"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 6 -->
+                <div class="conference-card">
+                    <div class="conference-year">May 2024</div>
+                    <div class="conference-name">CIROH Developers Conference</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Salt Lake City, Utah</div>
+                    <div class="conference-title">"U-NETwet: A Deep Learning Approach for Predicting River Depth and Floodplain Inundation"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 7 -->
+                <div class="conference-card">
+                    <div class="conference-year">December 2022</div>
+                    <div class="conference-name">AGU Fall Meeting</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Chicago, IL</div>
+                    <div class="conference-title">"A Deep Learning Approach for Predicting River Depth and Floodplain Inundation"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+
+                <!-- Conference 8 -->
+                <div class="conference-card">
+                    <div class="conference-year">April 2019</div>
+                    <div class="conference-name">AAG Annual Meeting</div>
+                    <div class="conference-location"><i class="fas fa-map-marker-alt"></i> Washington, DC</div>
+                    <div class="conference-title">"Towards the Development of a new Erosivity Equation"</div>
+                    <div class="conference-image">
+                        <span><i class="fas fa-camera"></i> Add conference photo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" style="background: var(--gray-50);">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Recent Publications</h2>
+                <p>Peer-reviewed articles in top journals</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="publications-grid">
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1002/esp.6070" target="_blank" class="pub-link">
+                        <div class="pub-year">2025 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Redefining BankFull Stage using Machine Learning Predictions in a Large Lowland River</div>
+                        <div class="pub-authors"><strong>Amanambu, A.C.</strong>, Mossa, J., & Chen, Y.</div>
+                        <div class="pub-journal">Earth Surface Processes and Landforms (ESPL)</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1016/j.jhydrol.2025.133946" target="_blank" class="pub-link">
+                        <div class="pub-year">2025 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Stage matters for hydrologic drought assessments: implications of anthropogenically-induced hydrologic drought</div>
+                        <div class="pub-authors">Mossa, J., Chen, Y. H., & <strong>Amanambu, A. C.</strong></div>
+                        <div class="pub-journal">Journal of Hydrology</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1080/02626667.2024.2426682" target="_blank" class="pub-link">
+                        <div class="pub-year">2024 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Hydrological Drought and Disconnectivity: Quantifying Flow Thresholds in a Large Coastal Plain River</div>
+                        <div class="pub-authors"><strong>Amanambu A.C.</strong>, Mossa, J., Serafin, K., Binford M.</div>
+                        <div class="pub-journal">Hydrological Sciences Journal, 69(16), 2436-2454</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1016/j.catena.2023.107634" target="_blank" class="pub-link">
+                        <div class="pub-year">2023 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Damming Consequences: Quantifying the effects on channel geometry and floodplain inundation</div>
+                        <div class="pub-authors"><strong>Amanambu A.C.</strong>, Mossa, J., Chen, Y.H., Deitch, M., Alruzuq, A.</div>
+                        <div class="pub-journal">Catena, 235, 107634</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1016/j.geomorph.2023.108986" target="_blank" class="pub-link">
+                        <div class="pub-year">2023 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Machine learning insights of anthropogenic and natural influences on riverbed deformation</div>
+                        <div class="pub-authors"><strong>Amanambu, A. C.</strong>, & Mossa, J.</div>
+                        <div class="pub-journal">Geomorphology, 446, 108986</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.3390/w14223611" target="_blank" class="pub-link">
+                        <div class="pub-year">2022 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Hydrological Drought Forecasting using Deep Transformer Model</div>
+                        <div class="pub-authors"><strong>Amanambu, A.C.</strong>, Mossa, J., Chen, Y.</div>
+                        <div class="pub-journal">Water, 14(22)</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1016/j.jhydrol.2020.125163" target="_blank" class="pub-link">
+                        <div class="pub-year">2020 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Groundwater system and climate change: Present status and future considerations</div>
+                        <div class="pub-authors"><strong>Amanambu, A. C.</strong>, Obarein, O. A., Mossa, J., et al.</div>
+                        <div class="pub-journal">Journal of Hydrology, 589, 125163</div>
+                    </a>
+                </div>
+                <div class="pub-card">
+                    <a href="https://doi.org/10.1016/j.catena.2018.09.025" target="_blank" class="pub-link">
+                        <div class="pub-year">2019 <i class="fas fa-external-link-alt" style="font-size:0.65rem;margin-left:0.3rem;"></i></div>
+                        <div class="pub-title">Spatio-temporal variation in rainfall-runoff erosivity due to climate change in the Lower Niger Basin</div>
+                        <div class="pub-authors"><strong>Amanambu, A. C.</strong>, et al.</div>
+                        <div class="pub-journal">Catena, 172, 324-334</div>
+                    </a>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="https://scholar.google.com/citations?user=XWcrOgkAAAAJ&hl=en" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> All Publications on Google Scholar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Teaching</h2>
+                <p>Courses at University of Alabama</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="course-title">Data Science Analytics for Water</div>
+                    <div class="course-code">GY 582/682</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-drone"></i></div>
+                    <div class="course-title">Introduction to UAS</div>
+                    <div class="course-code">GY 422/522/AEM518</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="course-title">Hydroclimatology</div>
+                    <div class="course-code">GY 412/512/612</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <div class="course-title">Remote Sensing for Hydrology</div>
+                    <div class="course-code">GY 670</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-database"></i></div>
+                    <div class="course-title">Hydrological Data Analysis</div>
+                    <div class="course-code">Special Topics</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="course-title">Physical Geography</div>
+                    <div class="course-code">GEO 2200</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:acamanambu@ua.edu">acamanambu@ua.edu</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>(352) 792-7388</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <h4>Office</h4>
+                            <p>3021 Shelby Hall, University of Alabama<br>Tuscaloosa, AL 35487</p>
+                        </div>
+                    </div>
+                    <div class="social-links-footer">
+                        <a href="https://x.com/amobiamanambu" target="_blank" class="social-link-footer" title="Twitter/X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/amobiamanambu/" target="_blank" class="social-link-footer" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/amobiamanambu" target="_blank" class="social-link-footer" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=XWcrOgkAAAAJ&hl=en" target="_blank" class="social-link-footer" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="address-card">
+                    <h4><i class="fas fa-university"></i> University of Alabama</h4>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.0776!2d-87.5449!3d33.2098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sUniversity%20of%20Alabama!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+                        width="100%"
+                        height="200"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="section-container">
+            <p>&copy; 2026 Dr. Amobichukwu C. Amanambu</p>
+            <p style="margin-top: 0.3rem; font-size: 0.8rem;">
+                <a href="https://x.com/amobiamanambu">Twitter</a> &bull;
+                <a href="https://www.linkedin.com/in/amobiamanambu/">LinkedIn</a> &bull;
+                <a href="https://github.com/amobiamanambu">GitHub</a> &bull;
+                <a href="https://scholar.google.com/citations?user=XWcrOgkAAAAJ&hl=en">Scholar</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('navLinks');
+            const toggle = document.querySelector('.mobile-toggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
